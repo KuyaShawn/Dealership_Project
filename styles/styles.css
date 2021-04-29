@@ -1,0 +1,19 @@
+.sm_divider {
+    width: 4rem;
+    height: 0.3rem;
+    background: #3d3d3d;
+    margin: 1rem auto;
+}
+/* Set the size of the div element that contains the map */
+#map {
+    height: 400px;
+    /* The height is 400 pixels */
+    width: 100%;
+    /* The width is the width of the web page */
+}
+.iconSize{
+    font-size: 3rem;
+}
+ul{
+    list-style-type: none;
+}
