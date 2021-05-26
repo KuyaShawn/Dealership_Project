@@ -33,5 +33,13 @@ $f3->route('GET /services', function(){
     echo $view->render('views/services.html');
 });
 
+// Service page
+$f3->route('GET /parts', function(){
+
+    //Display the home page
+    $view = new Template();
+    echo $view->render('views/parts.html');
+});
+
 //Run Fat-Free
 $f3->run();
