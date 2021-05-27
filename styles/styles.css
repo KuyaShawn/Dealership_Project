@@ -19,9 +19,13 @@ ul{
 }
 #carousel_imgs{
     width: 100%;
-    height: 600px;
+    height: 50%;
     overflow: hidden;
 }
 #title_bg{
     background: #e0e0e0;
+}
+
+.carousel-item img {
+    margin: auto;
 }
