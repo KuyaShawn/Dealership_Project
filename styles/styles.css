@@ -34,3 +34,7 @@ ul {
 .carousel-item img {
     margin: auto;
 }
+
+#body_bg{
+    background: #e4e5e6;
+}

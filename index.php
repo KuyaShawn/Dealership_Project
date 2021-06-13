@@ -33,12 +33,28 @@ $f3->route('GET /services', function(){
     echo $view->render('views/services.html');
 });
 
-// Service page
+// parts page
 $f3->route('GET /parts', function(){
 
     //Display the home page
     $view = new Template();
     echo $view->render('views/parts.html');
+});
+
+// Admin page
+$f3->route('GET /admin', function(){
+
+    //Display the home page
+    $view = new Template();
+    echo $view->render('views/admin.html');
+});
+
+// Admin login page
+$f3->route('GET /admin_login', function(){
+
+    //Display the home page
+    $view = new Template();
+    echo $view->render('views/admin_login.html');
 });
 
 //Run Fat-Free
