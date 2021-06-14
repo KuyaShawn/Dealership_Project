@@ -30,13 +30,18 @@ $f3->route('GET /services', function(){
 });
 
 // Admin page
-$f3->route('GET /admin', function(){
+$f3->route('GET|POST /admin', function(){
     $GLOBALS['controller']->admin();
 });
 
 // Admin login page
-$f3->route('GET /admin_login', function(){
+$f3->route('GET|POST /admin_login', function(){
     $GLOBALS['controller']->login();
+});
+
+// Admin logout page
+$f3->route('GET|POST /admin_logout', function(){
+    $GLOBALS['controller']->logout();
 });
 
 //Run Fat-Free

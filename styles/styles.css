@@ -1,3 +1,8 @@
+.err {
+    color: darkred;
+    padding-left: 1em;
+}
+
 .sm_divider {
     width: 4rem;
     height: 0.3rem;
@@ -39,7 +44,7 @@ ul {
     background: #e4e5e6;
 }
 #intro_bg{
-    background-image: url(https://eabenojar.greenriverdev.com/328/Dealership_Project/car_img/dealer_bg.jpg);
+    background-image: url(https://eabenojar.greenriverdev.com/328/dealership/car_img/dealer_bg.jpg);
     height: 600px;
     background-position: center;
 }
