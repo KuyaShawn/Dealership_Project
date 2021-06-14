@@ -15,7 +15,7 @@ class WarrantyClient extends Client
     public function __construct($_fName = "", $_lName = "", $_pNum = "", $_email = "",
                                 $_make = array(), $_model = "", $_year = array(),
                                 $_miles = 0, $_wash = "", $_vacuum = "",
-                                $_buff = "", $_day= "", $_time = "", $_category = array())
+                                $_buff = "", $_day = "", $_time = "", $_category = array())
     {
         parent::__construct($_fName, $_lName, $_pNum, $_email,
             $_make, $_model, $_year, $_miles, $_day, $_time, $_category);

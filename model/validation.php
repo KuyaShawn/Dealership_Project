@@ -18,6 +18,7 @@ class Validation
         }
         return false;
     }
+
     // login validation - End
 
     static function validPhone($phone): bool

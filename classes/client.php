@@ -30,7 +30,7 @@ class Client
      */
     public function __construct($_fName = "", $_lName = "", $_pNum = "", $_email = "",
                                 $_make = array(), $_model = "", $_year = array(),
-                                $_miles = 0, $_day= "", $_time = "", $_category = array())
+                                $_miles = 0, $_day = "", $_time = "", $_category = array())
     {
         $this->_fName = $_fName;
         $this->_lName = $_lName;
@@ -220,7 +220,6 @@ class Client
     {
         $this->_category = $category;
     }
-
 
 
 }
