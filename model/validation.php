@@ -20,7 +20,17 @@ class Validation
     }
     // login validation - End
 
+    static function validPhone($phone): bool
+    {
+        $pattern = '/^\s*(?:\+?(\d{1,3}))?([-. (]*(\d{3})[-. )]*)?((\d{3})[-. ]*(\d{2,4})(?:[-.x ]*(\d+))?)\s*$/';
+        return preg_match($pattern, $phone) == 1;
+    }
 
-
-
+    static function validEmail($email): bool
+    {
+        if (filter_var($email, FILTER_VALIDATE_EMAIL) && !empty($email)) {
+            return true;
+        }
+        return false;
+    }
 }

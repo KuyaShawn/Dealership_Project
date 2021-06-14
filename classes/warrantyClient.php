@@ -12,12 +12,13 @@ class WarrantyClient extends Client
      * @param $_vacuum
      * @param $_buff
      */
-    public function __construct($_fName = "", $_lName = "", $_pNum = "",
-                                $_make = "", $_model = "", $_year = 0,
-                                $_miles = 0, $_wash = "", $_vacuum = "", $_buff = "")
+    public function __construct($_fName = "", $_lName = "", $_pNum = "", $_email = "",
+                                $_make = array(), $_model = "", $_year = array(),
+                                $_miles = 0, $_wash = "", $_vacuum = "",
+                                $_buff = "", $_day= "", $_time = "", $_category = array())
     {
-        parent::__construct($_fName, $_lName, $_pNum,
-            $_make, $_model, $_year, $_miles);
+        parent::__construct($_fName, $_lName, $_pNum, $_email,
+            $_make, $_model, $_year, $_miles, $_day, $_time, $_category);
         $this->_wash = $_wash;
         $this->_vacuum = $_vacuum;
         $this->_buff = $_buff;
