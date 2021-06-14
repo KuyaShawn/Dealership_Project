@@ -12,7 +12,6 @@ session_start();
 
 //Instantiate Fat-Free
 $f3 = Base::instance();
-
 $controller = new dealerController($f3);
 
 //Home page
