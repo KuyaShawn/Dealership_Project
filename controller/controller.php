@@ -13,7 +13,7 @@ class dealerController
     {
         // Display the home page
         $view = new Template();
-        echo $view -> render('views/home.html');
+        echo $view->render('views/home.html');
     }
 
     public function inventory()
@@ -28,13 +28,6 @@ class dealerController
         //Display the home page
         $view = new Template();
         echo $view->render('views/services.html');
-    }
-
-    public function parts()
-    {
-        //Display the home page
-        $view = new Template();
-        echo $view->render('views/parts.html');
     }
 
     public function admin()

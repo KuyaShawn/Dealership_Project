@@ -29,11 +29,6 @@ $f3->route('GET /services', function(){
     $GLOBALS['controller']->services();
 });
 
-// parts page
-$f3->route('GET /parts', function(){
-    $GLOBALS['controller']->parts();
-});
-
 // Admin page
 $f3->route('GET /admin', function(){
     $GLOBALS['controller']->admin();
