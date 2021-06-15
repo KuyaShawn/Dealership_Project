@@ -30,6 +30,13 @@ class dealerController
         echo $view->render('views/services.html');
     }
 
+    public function summary()
+    {
+        //Display the home page
+        $view = new Template();
+        echo $view->render('views/summary.html');
+    }
+
     // Admin Page - START
     public function admin()
     {

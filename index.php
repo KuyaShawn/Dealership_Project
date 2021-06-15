@@ -29,6 +29,11 @@ $f3->route('GET /services', function(){
     $GLOBALS['controller']->services();
 });
 
+// Summary page
+$f3->route('GET /summary', function(){
+    $GLOBALS['controller']->summary();
+});
+
 // Admin page
 $f3->route('GET|POST /admin', function(){
     $GLOBALS['controller']->admin();
