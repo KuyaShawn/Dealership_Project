@@ -55,7 +55,7 @@
                     <div class="form-group">
                         <label class="h6" for="make">Make *</label>
                         <select id="make" name="make" class="form-control">
-                            <repeat group="{{ @make }}" value="{{ @make }}">
+                            <repeat group="{{ @Makes }}" value="{{ @make }}">
                                 <option value="{{ @make }}"
                                 <check if="{{ @make == @userMake }}">
                                     selected
@@ -83,7 +83,7 @@
                     <div class="form-group">
                         <label class="h6" for="category">Category *</label>
                         <select id="category" name="category" class="form-control">
-                            <repeat group="{{ @category }}" value="{{ @category }}">
+                            <repeat group="{{ @Categories }}" value="{{ @category }}">
                                 <option value="{{ @category }}"
                                 <check if="{{ @category == @userCategory }}">
                                     selected
@@ -100,7 +100,7 @@
                     <div class="form-group">
                         <label class="h6" for="year">Year *</label>
                         <select id="year" name="year" class="form-control">
-                            <repeat group="{{ @year }}" value="{{ @year }}">
+                            <repeat group="{{ @Years }}" value="{{ @year }}">
                                 <option value="{{ @year }}"
                                 <check if="{{ @year == @userYear }}">
                                     selected

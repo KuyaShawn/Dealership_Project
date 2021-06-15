@@ -116,9 +116,9 @@ class dealerController
                 $_SESSION['client'] = $client;
             }
         }
-        $this->_f3->set('userMake', dealerDataLayer::getMake());
-        $this->_f3->set('userCategory', dealerDataLayer::getCategory());
-        $this->_f3->set('userYear', dealerDataLayer::getYear());
+        $this->_f3->set('Makes', dealerDataLayer::getMake());
+        $this->_f3->set('Categories', dealerDataLayer::getCategory());
+        $this->_f3->set('Years', dealerDataLayer::getYear());
 
         //Display the home page
         $view = new Template();
