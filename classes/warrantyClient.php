@@ -2,67 +2,51 @@
 
 class WarrantyClient extends Client
 {
-    private $_wash;
-    private $_vacuum;
-    private $_buff;
+    private $_interiorAdditions;
+    private $_exteriorAdditions;
 
     /**
      * WarrantyClient constructor.
+     * @param $_interiorAdditions
+     * @param $_exteriorAdditions
      */
-    public function __construct()
+    public function __construct($_interiorAdditions = array(), $_exteriorAdditions = array())
     {
         parent::__construct();
-        $this->_wash = "";
-        $this->_vacuum = "";
-        $this->_buff = "";
+        $this->_interiorAdditions = $_interiorAdditions;
+        $this->_exteriorAdditions = $_exteriorAdditions;
     }
 
     /**
-     * @return mixed|string
+     * @return mixed
      */
-    public function getWash(): string
+    public function getInteriorAdditions(): array
     {
-        return $this->_wash;
+        return $this->_interiorAdditions;
     }
 
     /**
-     * @param mixed|string $wash
+     * @param mixed $interiorAdditions
      */
-    public function setWash($wash): void
+    public function setInteriorAdditions($interiorAdditions): void
     {
-        $this->_wash = $wash;
+        $this->_interiorAdditions = $interiorAdditions;
     }
 
     /**
-     * @return mixed|string
+     * @return mixed
      */
-    public function getVacuum(): string
+    public function getExteriorAdditions(): array
     {
-        return $this->_vacuum;
+        return $this->_exteriorAdditions;
     }
 
     /**
-     * @param mixed|string $vacuum
+     * @param mixed $exteriorAdditions
      */
-    public function setVacuum($vacuum): void
+    public function setExteriorAdditions($exteriorAdditions): void
     {
-        $this->_vacuum = $vacuum;
-    }
-
-    /**
-     * @return mixed|string
-     */
-    public function getBuff(): string
-    {
-        return $this->_buff;
-    }
-
-    /**
-     * @param mixed|string $buff
-     */
-    public function setBuff($buff): void
-    {
-        $this->_buff = $buff;
+        $this->_exteriorAdditions = $exteriorAdditions;
     }
 
 

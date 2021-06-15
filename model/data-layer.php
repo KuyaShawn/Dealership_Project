@@ -31,4 +31,14 @@ class DataLayer
             "2021", "2022", "2023");
     }
 
+    static function getInterior(): array
+    {
+        return array("Vacuum", "Air Freshener", "Seat Restoration", "Cabin Filter", "Hatchback", "Pickup", "Van", "Minivan", "Wagon");
+    }
+
+    static function getExterior(): array
+    {
+        return array("SUV", "Sedan", "Coupe", "Convertible", "Hatchback", "Pickup", "Van", "Minivan", "Wagon");
+    }
+
 }
