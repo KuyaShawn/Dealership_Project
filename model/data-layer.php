@@ -3,9 +3,9 @@
 /**
  * Class DataLayer
  */
-class DataLayer
+class dealerDataLayer
 {
-    static function getMake(): array
+    static function getMake()
     {
         return array("Acura", "Alfa Romeo", "Aston Martin", "Audi", "BMW", "Bentley", "Buick", "Cadilac", "Chevrolet", "Chrysler",
             "Daewoo", "Daihatsu", "Dodge", "Eagle", "Ferrari", "Fiat", "Fisker", "Ford", "Freighliner", "GMC", "Genesis",
@@ -16,12 +16,12 @@ class DataLayer
             "Toyota", "Volkswagen", "Volvo");
     }
 
-    static function getCategory(): array
+    static function getCategory()
     {
         return array("SUV", "Sedan", "Coupe", "Convertible", "Hatchback", "Pickup", "Van", "Minivan", "Wagon");
     }
 
-    static function getYear(): array
+    static function getYear()
     {
         return array("1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979",
             "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989",
@@ -31,12 +31,12 @@ class DataLayer
             "2021", "2022", "2023");
     }
 
-    static function getInterior(): array
+    static function getInterior()
     {
         return array("Vacuum", "Air Freshener", "Seat Restoration", "Cabin Filter Change");
     }
 
-    static function getExterior(): array
+    static function getExterior()
     {
         return array("Buff", "Wash", "Tire Shine", "Convertible", "Under Carriage Clean",
             "Engine Bay Clean", "Clay Bar");

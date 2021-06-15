@@ -45,7 +45,7 @@ class dealerValidation
 
     static function validMake($make): bool
     {
-        $makeCheck = Datalayer::getMake();
+        $makeCheck = dealerDataLayer::getMake();
 
         foreach ($make as $choice) {
             if (!empty($make) && !in_array($choice, $makeCheck)) {
@@ -65,7 +65,7 @@ class dealerValidation
 
     static function validCategory($cat): bool
     {
-        $catCheck = Datalayer::getCategory();
+        $catCheck = dealerDatalayer::getCategory();
 
         foreach ($cat as $choice) {
             if (!empty($cat) && !in_array($choice, $catCheck)) {
@@ -77,7 +77,7 @@ class dealerValidation
 
     static function validYear($year): bool
     {
-        $yearCheck = Datalayer::getYear();
+        $yearCheck = dealerDatalayer::getYear();
 
         foreach ($year as $choice) {
             if (!empty($year) && !in_array($choice, $yearCheck)) {
@@ -98,7 +98,7 @@ class dealerValidation
 
     static function validInterior($interior): bool
     {
-        $interiorCheck = Datalayer::getInterior();
+        $interiorCheck = dealerDatalayer::getInterior();
 
         foreach ($interior as $choice) {
             if (!empty($interior) && !in_array($choice, $interiorCheck)) {
@@ -110,7 +110,7 @@ class dealerValidation
 
     static function validExterior($exterior): bool
     {
-        $exteriorCheck = Datalayer::getInterior();
+        $exteriorCheck = dealerDatalayer::getInterior();
 
         foreach ($exterior as $choice) {
             if (!empty($choice) && !in_array($choice, $exteriorCheck)) {
