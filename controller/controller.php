@@ -129,7 +129,6 @@ class dealerController
             $userInterior = array();
             $userExterior = array();
 
-            var_dump($client);
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $userInterior = $_POST['interiorOption'];
                 $userExterior = $_POST['exteriorOption'];
