@@ -38,7 +38,7 @@ class dealerController
             $miles = $_POST['miles'];
 
             //looks at the mileage to determine if the client is still under warranty
-            if (dealerValidation::validWarranty($miles)) {
+            if ($_POST["warranty"] == 'warranty') {
                 $client = new WarrantyClient();
             } else {
                 $client = new normalClient();
