@@ -124,19 +124,19 @@ class dealerController
             $userExterior = array();
 
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                $userInterior = $_POST['indoorInterests'] == null ? array() : $_POST['indoorInterests'];
-                $userExterior = $_POST['outdoorInterests'] == null ? array() : $_POST['outdoorInterests'];
+                $userInterior = $_POST['interiorOption'] == null ? array() : $_POST['interiorOption'];
+                $userExterior = $_POST['exteriorOption'] == null ? array() : $_POST['exteriorOption'];
 
-                if (Validation::validIndoor($userInterior)) {
-                    $_SESSION['user']->setInDoorInterests($userInterior);
+                if (dealerValidation::validInterior($userInterior)) {
+                    $_SESSION['user']->setInteriorAdditions($userInterior);
                 } else {
-                    $this->_f3->set('errors["indoor"]', "Please enter a valid interest");
+                    $this->_f3->set('errors["interior"]', "Please choose an option");
                 }
 
-                if (Validation::validOutdoor($userExterior)) {
-                    $_SESSION['user']->setOutDoorInterests($userExterior);
+                if (dealerValidation::validExterior($userExterior)) {
+                    $_SESSION['user']->setExteriorAdditions($userExterior);
                 } else {
-                    $this->_f3->set('errors["outdoor"]', "Please enter a valid interest");
+                    $this->_f3->set('errors["exterior"]', "Please choose an option");
                 }
                 if (empty($this->_f3->get('errors'))) {
                     header('location: summary');
@@ -144,8 +144,8 @@ class dealerController
             }
 
             //Get both interest and then send them to the view
-            $this->_f3->set('indoor', DataLayer::getIndoors());
-            $this->_f3->set('outdoor', DataLayer::getOutdoors());
+            $this->_f3->set('interior', dealerDataLayer::getInterior());
+            $this->_f3->set('exterior', dealerDataLayer::getExterior());
 
             //Store the user input in the hive (Part of making the code sticky)
             $this->_f3->set('userInterior', $userInterior);
