@@ -43,5 +43,7 @@ BONUS: Incorporates Ajax that access data from a JSON file, PHP script, or API.
 * Our project does not incorporate Ajax.
 
 # UML Class Diagram
+![UML Diagram](https://eabenojar.greenriverdev.com/328/dealership_project/diagram_img/UML.jpg)
 
-#ER Database Diagram
+# ER Database Diagram
+![ER Diagram](https://eabenojar.greenriverdev.com/328/dealership_project/diagram_img/ER.jpg)
