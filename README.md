@@ -43,3 +43,5 @@ BONUS: Incorporates Ajax that access data from a JSON file, PHP script, or API.
 * Our project does not incorporate Ajax.
 
 # UML Class Diagram
+
+#ER Database Diagram
