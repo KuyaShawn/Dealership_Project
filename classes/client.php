@@ -31,7 +31,7 @@ class normalClient
     /**
      * @return mixed|string
      */
-    public function getFName(): string
+    public function getFName()
     {
         return $this->_fName;
     }
@@ -39,7 +39,7 @@ class normalClient
     /**
      * @param mixed|string $fName
      */
-    public function setFName($fName): void
+    public function setFName($fName)
     {
         $this->_fName = $fName;
     }
@@ -47,7 +47,7 @@ class normalClient
     /**
      * @return mixed|string
      */
-    public function getLName(): string
+    public function getLName()
     {
         return $this->_lName;
     }
@@ -55,7 +55,7 @@ class normalClient
     /**
      * @param mixed|string $lName
      */
-    public function setLName($lName): void
+    public function setLName($lName)
     {
         $this->_lName = $lName;
     }
@@ -63,7 +63,7 @@ class normalClient
     /**
      * @return mixed|string
      */
-    public function getPNum(): string
+    public function getPNum()
     {
         return $this->_pNum;
     }
@@ -71,7 +71,7 @@ class normalClient
     /**
      * @param mixed|string $pNum
      */
-    public function setPNum($pNum): void
+    public function setPNum($pNum)
     {
         $this->_pNum = $pNum;
     }
@@ -79,7 +79,7 @@ class normalClient
     /**
      * @return mixed|string
      */
-    public function getEmail(): string
+    public function getEmail()
     {
         return $this->_email;
     }
@@ -87,7 +87,7 @@ class normalClient
     /**
      * @param mixed|string $email
      */
-    public function setEmail($email): void
+    public function setEmail($email)
     {
         $this->_email = $email;
     }
@@ -95,7 +95,7 @@ class normalClient
     /**
      * @return mixed|string
      */
-    public function getMake(): array
+    public function getMake()
     {
         return $this->_make;
     }
@@ -103,7 +103,7 @@ class normalClient
     /**
      * @param mixed|string $make
      */
-    public function setMake($make): void
+    public function setMake($make)
     {
         $this->_make = $make;
     }
@@ -111,7 +111,7 @@ class normalClient
     /**
      * @return mixed|string
      */
-    public function getModel(): string
+    public function getModel()
     {
         return $this->_model;
     }
@@ -119,7 +119,7 @@ class normalClient
     /**
      * @param mixed|string $model
      */
-    public function setModel($model): void
+    public function setModel($model)
     {
         $this->_model = $model;
     }
@@ -127,7 +127,7 @@ class normalClient
     /**
      * @return int|mixed
      */
-    public function getYear(): array
+    public function getYear()
     {
         return $this->_year;
     }
@@ -135,7 +135,7 @@ class normalClient
     /**
      * @param int|mixed $year
      */
-    public function setYear($year): void
+    public function setYear($year)
     {
         $this->_year = $year;
     }
@@ -143,7 +143,7 @@ class normalClient
     /**
      * @return int|mixed
      */
-    public function getMiles(): int
+    public function getMiles()
     {
         return $this->_miles;
     }
@@ -151,7 +151,7 @@ class normalClient
     /**
      * @param int|mixed $miles
      */
-    public function setMiles($miles): void
+    public function setMiles($miles)
     {
         $this->_miles = $miles;
     }
@@ -159,7 +159,7 @@ class normalClient
     /**
      * @return mixed|string
      */
-    public function getCategory(): array
+    public function getCategory()
     {
         return $this->_category;
     }
@@ -167,7 +167,7 @@ class normalClient
     /**
      * @param mixed|string $category
      */
-    public function setCategory($category): void
+    public function setCategory($category)
     {
         $this->_category = $category;
     }

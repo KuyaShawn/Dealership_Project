@@ -18,7 +18,7 @@ class WarrantyClient extends normalClient
     /**
      * @return mixed
      */
-    public function getInteriorAdditions(): array
+    public function getInteriorAdditions()
     {
         return $this->_interiorAdditions;
     }
@@ -26,7 +26,7 @@ class WarrantyClient extends normalClient
     /**
      * @param mixed $interiorAdditions
      */
-    public function setInteriorAdditions($interiorAdditions): void
+    public function setInteriorAdditions($interiorAdditions)
     {
         $this->_interiorAdditions = $interiorAdditions;
     }
@@ -34,7 +34,7 @@ class WarrantyClient extends normalClient
     /**
      * @return mixed
      */
-    public function getExteriorAdditions(): array
+    public function getExteriorAdditions()
     {
         return $this->_exteriorAdditions;
     }
@@ -42,7 +42,7 @@ class WarrantyClient extends normalClient
     /**
      * @param mixed $exteriorAdditions
      */
-    public function setExteriorAdditions($exteriorAdditions): void
+    public function setExteriorAdditions($exteriorAdditions)
     {
         $this->_exteriorAdditions = $exteriorAdditions;
     }

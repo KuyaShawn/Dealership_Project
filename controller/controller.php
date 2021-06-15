@@ -130,17 +130,17 @@ class dealerController
             $userExterior = array();
 
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                $userInterior = $_POST['interiorOption'] == null ? array() : $_POST['interiorOption'];
-                $userExterior = $_POST['exteriorOption'] == null ? array() : $_POST['exteriorOption'];
+                $userInterior = $_POST['interiorOption'];
+                $userExterior = $_POST['exteriorOption'];
 
                 if (dealerValidation::validInterior($userInterior)) {
-                    $_SESSION['user']->setInteriorAdditions($userInterior);
+                    $client->setInteriorAdditions($userInterior);
                 } else {
                     $this->_f3->set('errors["interior"]', "Please choose an option");
                 }
 
                 if (dealerValidation::validExterior($userExterior)) {
-                    $_SESSION['user']->setExteriorAdditions($userExterior);
+                    $client->setExteriorAdditions($userExterior);
                 } else {
                     $this->_f3->set('errors["exterior"]', "Please choose an option");
                 }
@@ -150,13 +150,13 @@ class dealerController
             }
 
             //Get both interest and then send them to the view
-            $this->_f3->set('interior', dealerDataLayer::getInterior());
-            $this->_f3->set('exterior', dealerDataLayer::getExterior());
+            $this->_f3->set('interior', dealerDataLayer::getInteriorAdditions());
+            $this->_f3->set('exterior', dealerDataLayer::getExteriorAdditions());
 
             //Store the user input in the hive (Part of making the code sticky)
             $this->_f3->set('userInterior', $userInterior);
             $this->_f3->set('userExterior', $userExterior);
-
+             $_SESSION['client'] = $client;
             if (empty($this->_f3->get('errors'))) {
                 header('location: sumary');
             }
@@ -164,9 +164,6 @@ class dealerController
             // Display the warranty page
             $view = new Template();
             echo $view->render('views/warrantyClients.html');
-
-
-
     }
 
     public function summary()
