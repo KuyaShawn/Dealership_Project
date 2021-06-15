@@ -20,8 +20,8 @@
                 <li class="list-group-item">Year: {{ @SESSION.client->getYear() }}</li>
                 <li class="list-group-item">Miles: {{ @SESSION.client->getMiles() }}</li>
                 <check if="{{ @SESSION.client instanceof WarrantyClient }}">
-                    <li class="list-group-item">
-
+                    <li class="list-group-item">Warranty Options: {{ implode(" ", @SESSION.client->getInteriorAdditions()) }}
+                        {{ implode(" ", @SESSION.client->getExteriorAdditions()) }}
                     </li>
                 </check>
 
