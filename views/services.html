@@ -63,6 +63,9 @@
                                 >{{ @make }}</option>
                             </repeat>
                         </select>
+                        <check if="{{ isset(@errors['make']) }}">
+                            <span class="err">{{ @errors['make'] }}</span>
+                        </check>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -88,6 +91,9 @@
                                 >{{ @category }}</option>
                             </repeat>
                         </select>
+                        <check if="{{ isset(@errors['category']) }}">
+                            <span class="err">{{ @errors['category'] }}</span>
+                        </check>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -102,6 +108,9 @@
                                 >{{ @year }}</option>
                             </repeat>
                         </select>
+                        <check if="{{ isset(@errors['year']) }}">
+                            <span class="err">{{ @errors['year'] }}</span>
+                        </check>
                     </div>
                 </div>
             </div>
