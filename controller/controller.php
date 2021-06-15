@@ -37,77 +37,67 @@ class dealerController
             $year = $_POST['year'];
             $miles = $_POST['miles'];
             //looks at the mileage to determine if the client is still under warranty
-            if (dealerValidation::validWarranty($miles)){
+            if (dealerValidation::validWarranty($miles)) {
                 $client = new WarrantyClient();
-            }
-            else{
+            } else {
                 $client = new normalClient();
             }
 
             //validate first name
-            if (dealerValidation::validName($fName)){
+            if (dealerValidation::validName($fName)) {
                 $client->setFName($fName);
-            }
-            else {
+            } else {
                 $this->_f3->set('errors[fname]', 'Please enter a valid First Name');
             }
 
             //validate the last name
-            if (dealerValidation::validName($lName)){
+            if (dealerValidation::validName($lName)) {
                 $client->setFName($lName);
-            }
-            else {
+            } else {
                 $this->_f3->set('errors[lname]', 'Please enter a valid Last Name');
             }
 
             //validate the phone number
-            if (dealerValidation::validPhone($pNum)){
+            if (dealerValidation::validPhone($pNum)) {
                 $client->setPNum($pNum);
-            }
-            else {
+            } else {
                 $this->_f3->set('errors[pNum]', 'Please enter a valid phone number');
             }
 
             //validate the email
-            if (dealerValidation::validEmail($email)){
+            if (dealerValidation::validEmail($email)) {
                 $client->setEmail($email);
-            }
-            else {
+            } else {
                 $this->_f3->set('errors[email]', 'Please enter a valid email');
             }
 
-            if (dealerValidation::validModel($model)){
+            if (dealerValidation::validModel($model)) {
                 $client->setModel($model);
-            }
-            else {
+            } else {
                 $this->_f3->set('errors[model]', 'Please enter a valid model');
             }
 
-            if (dealerValidation::validMiles($miles)){
+            if (dealerValidation::validMiles($miles)) {
                 $client->setMiles($miles);
-            }
-            else {
+            } else {
                 $this->_f3->set('errors[miles]', 'Please enter valid miles');
             }
 
-            if (dealerValidation::validMake($make)){
+            if (dealerValidation::validMake($make)) {
                 $client->setMake($make);
-            }
-            else {
+            } else {
                 $this->_f3->set('errors[make]', 'Please enter valid make');
             }
 
-            if (dealerValidation::validCategory($category)){
+            if (dealerValidation::validCategory($category)) {
                 $client->setCategory($category);
-            }
-            else {
+            } else {
                 $this->_f3->set('errors[category]', 'Please enter valid category');
             }
 
-            if (dealerValidation::validYear($year)){
+            if (dealerValidation::validYear($year)) {
                 $client->setYear($year);
-            }
-            else {
+            } else {
                 $this->_f3->set('errors[year]', 'Please enter valid year');
             }
 
@@ -194,16 +184,16 @@ class dealerController
             $username = $_POST['userName'];
             $userpass = $_POST['userPass'];
 
-            if(dealerValidation::loginUser($username)){
+            if (dealerValidation::loginUser($username)) {
                 $validLogin = true;
-            }else{
+            } else {
                 $validLogin = false;
                 $this->_f3->set('errors["userName"]', "Please input a valid first name");
             }
 
-            if(dealerValidation::loginPass($userpass)){
+            if (dealerValidation::loginPass($userpass)) {
                 $validLogin = true;
-            }else{
+            } else {
                 $validLogin = false;
                 $this->_f3->set('errors["userPass"]', "Please input a valid first name");
             }
