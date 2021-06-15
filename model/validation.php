@@ -76,8 +76,6 @@ class dealerValidation
     static function validYear($year): bool
     {
         $yearCheck = dealerDatalayer::getYear();
-
-
         if (!empty($year) && !in_array($year, $yearCheck)) {
             return false;
         }

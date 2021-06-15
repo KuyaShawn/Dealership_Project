@@ -36,7 +36,6 @@ class dealerController
             $category = $_POST['category'];
             $year = $_POST['year'];
             $miles = $_POST['miles'];
-
             //looks at the mileage to determine if the client is still under warranty
             if (dealerValidation::validWarranty($miles)){
                 $client = new WarrantyClient();
@@ -116,8 +115,11 @@ class dealerController
             if (empty($this->_f3->get('errors'))) {
                 $_SESSION['client'] = $client;
             }
-
         }
+        $this->_f3->set('userMake', dealerDataLayer::getMake());
+        $this->_f3->set('userCategory', dealerDataLayer::getCategory());
+        $this->_f3->set('userYear', dealerDataLayer::getYear());
+
         //Display the home page
         $view = new Template();
         echo $view->render('views/services.html');
