@@ -47,11 +47,10 @@ class dealerValidation
     {
         $makeCheck = dealerDataLayer::getMake();
 
-        foreach ($make as $choice) {
-            if (!empty($make) && !in_array($choice, $makeCheck)) {
-                return false;
-            }
+        if (!empty($make) && !in_array($make, $makeCheck)) {
+            return false;
         }
+
         return true;
     }
 
@@ -67,11 +66,10 @@ class dealerValidation
     {
         $catCheck = dealerDatalayer::getCategory();
 
-        foreach ($cat as $choice) {
-            if (!empty($cat) && !in_array($choice, $catCheck)) {
-                return false;
-            }
+        if (!empty($cat) && !in_array($cat, $catCheck)) {
+            return false;
         }
+
         return true;
     }
 
@@ -79,11 +77,11 @@ class dealerValidation
     {
         $yearCheck = dealerDatalayer::getYear();
 
-        foreach ($year as $choice) {
-            if (!empty($year) && !in_array($choice, $yearCheck)) {
-                return false;
-            }
+
+        if (!empty($year) && !in_array($year, $yearCheck)) {
+            return false;
         }
+
         return true;
     }
 
