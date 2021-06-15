@@ -125,13 +125,6 @@ class dealerController
     public function warrantyClients()
     {
         $client =  $_SESSION['client'];
-
-        /*echo "<pre>";
-        var_dump($client);
-        echo "</pre>";
-            die();
-        */
-        if ($_SESSION['user'] instanceof WarrantyClient) {
             //Initialize variables to store user input as an array
             $userInterior = array();
             $userExterior = array();
@@ -164,12 +157,15 @@ class dealerController
             $this->_f3->set('userInterior', $userInterior);
             $this->_f3->set('userExterior', $userExterior);
 
+            if (empty($this->_f3->get('errors'))) {
+                header('location: sumary');
+            }
+
             // Display the warranty page
             $view = new Template();
             echo $view->render('views/warrantyClients.html');
-        } else {
-            header('location: sumary');
-        }
+
+
 
     }
 
@@ -177,11 +173,6 @@ class dealerController
     {
 
         $client =  $_SESSION['client'];
-        /*
-        echo "<pre>";
-        var_dump($client);
-        echo "</pre>";
-        die();*/
         //Display the home page
         $view = new Template();
         echo $view->render('views/sumary.html');
