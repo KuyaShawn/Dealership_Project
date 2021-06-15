@@ -34,4 +34,74 @@ class Validation
         }
         return false;
     }
+
+    static function validName($name): bool
+    {
+        if(!empty($name) && (preg_match('/^[A-Za-z]+$/' ,$name) == 1 )){
+            return true;
+        }
+        return false;
+    }
+
+    static function validMake($make): bool
+    {
+        $makeCheck = Datalayer::getMake();
+
+        foreach ($make as $choice) {
+            if (!empty($make) && !in_array($choice, $makeCheck)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    static function validModel($model): bool
+    {
+        if (!empty($model)){
+            return true;
+        }
+        return false;
+    }
+
+    static function validCategory($cat): bool
+    {
+        $catCheck = Datalayer::getCategory();
+
+        foreach ($cat as $choice) {
+            if (!empty($cat) && !in_array($choice, $catCheck)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    static function validYear($year): bool
+    {
+        $yearCheck = Datalayer::getYear();
+
+        foreach ($year as $choice) {
+            if (!empty($year) && !in_array($choice, $yearCheck)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    static function validMiles($miles): bool
+    {
+        if (!empty($miles) && ($miles < 0)){
+            return true;
+        }
+        return false;
+
+    }
+
+    static function validWarranty($miles): bool
+    {
+        if (!empty($miles) && ($miles <+ 50000)){
+            return true;
+        }
+        return false;
+    }
 }
+

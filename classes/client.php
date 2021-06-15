@@ -11,8 +11,6 @@ class Client
     private $_category;
     private $_year;
     private $_miles;
-    private $_day;
-    private $_time;
 
     /**
      * Clients constructor.
@@ -27,8 +25,6 @@ class Client
         $this->_model = "";
         $this->_year = array();
         $this->_miles = "";
-        $this->_day = "";
-        $this->_time = "";
         $this->_category = array();
     }
 
@@ -158,38 +154,6 @@ class Client
     public function setMiles($miles): void
     {
         $this->_miles = $miles;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDay(): string
-    {
-        return $this->_day;
-    }
-
-    /**
-     * @param mixed $day
-     */
-    public function setDay($day): void
-    {
-        $this->_day = $day;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTime(): string
-    {
-        return $this->_time;
-    }
-
-    /**
-     * @param mixed $time
-     */
-    public function setTime($time): void
-    {
-        $this->_time = $time;
     }
 
     /**
