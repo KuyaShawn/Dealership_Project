@@ -101,9 +101,8 @@ class dealerController
                 $this->_f3->set('errors[year]', 'Please enter valid year');
             }
 
-
             if (empty($this->_f3->get('errors'))) {
-                $_SESSION['client'] = $client;
+                header('location: warrantyClients');
             }
         }
         $this->_f3->set('Makes', dealerDataLayer::getMake());
@@ -139,7 +138,7 @@ class dealerController
                     $this->_f3->set('errors["exterior"]', "Please choose an option");
                 }
                 if (empty($this->_f3->get('errors'))) {
-                    header('location: summary');
+                    header('location: sumary');
                 }
             }
 
@@ -155,7 +154,7 @@ class dealerController
             $view = new Template();
             echo $view->render('views/warrantyClients.html');
         } else {
-            header('location: summary');
+            header('location: sumary');
         }
 
     }
