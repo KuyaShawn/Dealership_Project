@@ -6,15 +6,13 @@ class WarrantyClient extends Client
     private $_exteriorAdditions;
 
     /**
-     * WarrantyClient constructor.
-     * @param $_interiorAdditions
-     * @param $_exteriorAdditions
+     * WarrantyClient constructor
      */
-    public function __construct($_interiorAdditions = array(), $_exteriorAdditions = array())
+    public function __construct()
     {
         parent::__construct();
-        $this->_interiorAdditions = $_interiorAdditions;
-        $this->_exteriorAdditions = $_exteriorAdditions;
+        $this->_interiorAdditions = array();
+        $this->_exteriorAdditions = array();
     }
 
     /**
