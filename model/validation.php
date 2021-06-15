@@ -85,7 +85,7 @@ class dealerValidation
 
     static function validMiles($miles): bool
     {
-        if (!empty($miles) && ($miles < 0)){
+        if (!empty($miles) && ($miles > 0)){
             return true;
         }
         return false;
@@ -118,7 +118,7 @@ class dealerValidation
 
     static function validWarranty($miles): bool
     {
-        if (!empty($miles) && ($miles <= 50000)){
+        if (!empty($miles) && ($miles <= 50000) && ($miles > 0)){
             return true;
         }
         return false;
