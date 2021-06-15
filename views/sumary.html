@@ -5,7 +5,19 @@
     <div class="row column_row pt-4">
         <div class="col">
             <ul class="list-group">
+                <li class="list-group-item">Name: {{ @SESSION.client->getFname() }} {{ @SESSION.client->getLname() }}</li>
+                <li class="list-group-item">Phone: {{ @SESSION.client->getPNum() }}</li>
+                <li class="list-group-item">Email: {{ @SESSION.client->getEmail() }}</li>
+                <li class="list-group-item">Make: {{ @SESSION.client->getMake() }}</li>
+                <li class="list-group-item">Model: {{ @SESSION.client->getModel() }}</li>
+                <li class="list-group-item">Category: {{ @SESSION.client->getCategory() }}</li>
+                <li class="list-group-item">Year: {{ @SESSION.client->getYear() }}</li>
+                <li class="list-group-item">Miles: {{ @SESSION.client->getMiles() }}</li>
+                <check if="{{ @SESSION.client instanceof WarrantyClient }}">
+                    <li class="list-group-item">
 
+                    </li>
+                </check>
             </ul>
         </div>
     </div>
