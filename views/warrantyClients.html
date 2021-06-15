@@ -16,7 +16,7 @@
                 <label class="form-check-label">
                   <input class="form-check-input" type="checkbox" value="{{ @interior }}"
                          name="interiorOption[]"
-                  <check if="{{ in_array(@interior, @userIndoor) }}">
+                  <check if="{{ in_array(@interior, @userInterior) }}">
                     checked = "checked"
                   </check>
                   >{{ @interior }}
