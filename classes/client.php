@@ -16,33 +16,20 @@ class Client
 
     /**
      * Clients constructor.
-     * @param $_fName
-     * @param $_lName
-     * @param $_pNum
-     * @param $_email
-     * @param $_make
-     * @param $_model
-     * @param $_year
-     * @param $_miles
-     * @param $_category
-     * @param $_day
-     * @param $_time
      */
-    public function __construct($_fName = "", $_lName = "", $_pNum = "", $_email = "",
-                                $_make = array(), $_model = "", $_year = array(),
-                                $_miles = 0, $_day = "", $_time = "", $_category = array())
+    public function __construct()
     {
-        $this->_fName = $_fName;
-        $this->_lName = $_lName;
-        $this->_pNum = $_pNum;
-        $this->_email = $_email;
-        $this->_make = $_make;
-        $this->_model = $_model;
-        $this->_year = $_year;
-        $this->_miles = $_miles;
-        $this->_day = $_day;
-        $this->_time = $_time;
-        $this->_category = $_category;
+        $this->_fName = "";
+        $this->_lName = "";
+        $this->_pNum = "";
+        $this->_email = "";
+        $this->_make = array();
+        $this->_model = "";
+        $this->_year = array();
+        $this->_miles = "";
+        $this->_day = "";
+        $this->_time = "";
+        $this->_category = array();
     }
 
     /**
