@@ -156,10 +156,7 @@ class dealerController
             //Store the user input in the hive (Part of making the code sticky)
             $this->_f3->set('userInterior', $userInterior);
             $this->_f3->set('userExterior', $userExterior);
-             $_SESSION['client'] = $client;
-            if (empty($this->_f3->get('errors'))) {
-                header('location: sumary');
-            }
+            $_SESSION['client'] = $client;
 
             // Display the warranty page
             $view = new Template();
