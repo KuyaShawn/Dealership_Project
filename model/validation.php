@@ -1,8 +1,15 @@
 <?php
 
+/**
+ * Class dealerValidation
+ */
 class dealerValidation
 {
     // login validation - start
+    /**
+     * @param $userName
+     * @return bool
+     */
     static function loginUser($userName): bool
     {
         if ($userName == "dealerAdmin") {
@@ -11,6 +18,10 @@ class dealerValidation
         return false;
     }
 
+    /**
+     * @param $userPass
+     * @return bool
+     */
     static function loginPass($userPass): bool
     {
         if ($userPass == "dealer@dmin") {
@@ -21,12 +32,20 @@ class dealerValidation
 
     // login validation - End
 
+    /**
+     * @param $phone
+     * @return bool
+     */
     static function validPhone($phone): bool
     {
         $pattern = '/^\s*(?:\+?(\d{1,3}))?([-. (]*(\d{3})[-. )]*)?((\d{3})[-. ]*(\d{2,4})(?:[-.x ]*(\d+))?)\s*$/';
         return preg_match($pattern, $phone) == 1;
     }
 
+    /**
+     * @param $email
+     * @return bool
+     */
     static function validEmail($email): bool
     {
         if (filter_var($email, FILTER_VALIDATE_EMAIL) && !empty($email)) {
@@ -35,6 +54,10 @@ class dealerValidation
         return false;
     }
 
+    /**
+     * @param $name
+     * @return bool
+     */
     static function validName($name): bool
     {
         if(!empty($name) && (preg_match('/^[A-Za-z]+$/' ,$name) == 1 )){
@@ -43,6 +66,10 @@ class dealerValidation
         return false;
     }
 
+    /**
+     * @param $make
+     * @return bool
+     */
     static function validMake($make): bool
     {
         $makeCheck = dealerDataLayer::getMake();
@@ -54,6 +81,10 @@ class dealerValidation
         return true;
     }
 
+    /**
+     * @param $model
+     * @return bool
+     */
     static function validModel($model): bool
     {
         if (!empty($model)){
@@ -62,6 +93,10 @@ class dealerValidation
         return false;
     }
 
+    /**
+     * @param $cat
+     * @return bool
+     */
     static function validCategory($cat): bool
     {
         $catCheck = dealerDatalayer::getCategory();
@@ -73,6 +108,10 @@ class dealerValidation
         return true;
     }
 
+    /**
+     * @param $year
+     * @return bool
+     */
     static function validYear($year): bool
     {
         $yearCheck = dealerDatalayer::getYear();
@@ -83,6 +122,10 @@ class dealerValidation
         return true;
     }
 
+    /**
+     * @param $miles
+     * @return bool
+     */
     static function validMiles($miles): bool
     {
         if (!empty($miles) && ($miles > 0)){
@@ -92,6 +135,10 @@ class dealerValidation
 
     }
 
+    /**
+     * @param $interior
+     * @return bool
+     */
     static function validInterior($interior): bool
     {
         $interiorCheck = dealerDataLayer::getInterior();
@@ -106,6 +153,10 @@ class dealerValidation
         return true;
     }
 
+    /**
+     * @param $exterior
+     * @return bool
+     */
     static function validExterior($exterior): bool
     {
         $exteriorCheck = dealerDataLayer::getExterior();
@@ -120,6 +171,10 @@ class dealerValidation
         return true;
     }
 
+    /**
+     * @param $miles
+     * @return bool
+     */
     static function validWarranty($miles): bool
     {
         if (!empty((int)$miles) && ((int)$miles <= 50000) && ((int)$miles > 0)){
