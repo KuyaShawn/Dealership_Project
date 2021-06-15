@@ -94,11 +94,13 @@ class dealerValidation
 
     static function validInterior($interior): bool
     {
-        $interiorCheck = dealerDatalayer::getInterior();
+        $interiorCheck = dealerDataLayer::getInterior();
 
-        foreach ($interior as $choice) {
-            if (!empty($interior) && !in_array($choice, $interiorCheck)) {
-                return false;
+        if (!empty($interior)){
+            foreach ($interior as $choice) {
+                if (!in_array($choice, $interiorCheck)) {
+                    return false;
+                }
             }
         }
         return true;
@@ -106,11 +108,13 @@ class dealerValidation
 
     static function validExterior($exterior): bool
     {
-        $exteriorCheck = dealerDatalayer::getInterior();
+        $exteriorCheck = dealerDataLayer::getExterior();
 
-        foreach ($exterior as $choice) {
-            if (!empty($choice) && !in_array($choice, $exteriorCheck)) {
-                return false;
+        if (!empty($exterior)){
+            foreach ($exterior as $choice) {
+                if (!in_array($choice, $exteriorCheck)) {
+                    return false;
+                }
             }
         }
         return true;
