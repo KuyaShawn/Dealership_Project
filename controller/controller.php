@@ -174,7 +174,7 @@ class dealerController
     {
         //Display the home page
         $view = new Template();
-        echo $view->render('views/summary.html');
+        echo $view->render('views/sumary.html');
     }
 
     // Admin Page - START

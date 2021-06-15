@@ -35,7 +35,7 @@ $f3->route('GET|POST /warrantyClients', function(){
 });
 
 // Summary page
-$f3->route('GET /summary', function(){
+$f3->route('GET /sumary', function(){
     $GLOBALS['controller']->summary();
 });
 
