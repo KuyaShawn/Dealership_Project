@@ -36,6 +36,7 @@ class dealerController
             $category = $_POST['category'];
             $year = $_POST['year'];
             $miles = $_POST['miles'];
+
             //looks at the mileage to determine if the client is still under warranty
             if (dealerValidation::validWarranty($miles)) {
                 $client = new WarrantyClient();
@@ -52,7 +53,7 @@ class dealerController
 
             //validate the last name
             if (dealerValidation::validName($lName)) {
-                $client->setFName($lName);
+                $client->setLName($lName);
             } else {
                 $this->_f3->set('errors[lname]', 'Please enter a valid Last Name');
             }
@@ -102,13 +103,19 @@ class dealerController
             }
 
             if (empty($this->_f3->get('errors'))) {
-                header('location: warrantyClients');
+                if ($client instanceof WarrantyClient){
+                    header('location: warrantyClients');
+                }
+                else{
+                    header('location: sumary');
+                }
             }
         }
         $this->_f3->set('Makes', dealerDataLayer::getMake());
         $this->_f3->set('Categories', dealerDataLayer::getCategory());
         $this->_f3->set('Years', dealerDataLayer::getYear());
 
+        $_SESSION['client'] = $client;
         //Display the home page
         $view = new Template();
         echo $view->render('views/services.html');
@@ -117,6 +124,13 @@ class dealerController
 
     public function warrantyClients()
     {
+        $client =  $_SESSION['client'];
+
+        /*echo "<pre>";
+        var_dump($client);
+        echo "</pre>";
+            die();
+        */
         if ($_SESSION['user'] instanceof WarrantyClient) {
             //Initialize variables to store user input as an array
             $userInterior = array();
@@ -161,6 +175,13 @@ class dealerController
 
     public function summary()
     {
+
+        $client =  $_SESSION['client'];
+        /*
+        echo "<pre>";
+        var_dump($client);
+        echo "</pre>";
+        die();*/
         //Display the home page
         $view = new Template();
         echo $view->render('views/sumary.html');
