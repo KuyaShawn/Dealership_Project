@@ -25,7 +25,7 @@ $f3->route('GET /inventory', function(){
 });
 
 // Service page
-$f3->route('GET /services', function(){
+$f3->route('GET|POST /git services', function(){
     $GLOBALS['controller']->services();
 });
 

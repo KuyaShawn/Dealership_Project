@@ -1,6 +1,6 @@
 <?php
 
-class Validation
+class dealerValidation
 {
     // login validation - start
     static function loginUser($userName): bool
@@ -94,6 +94,30 @@ class Validation
         }
         return false;
 
+    }
+
+    static function validInterior($interior): bool
+    {
+        $interiorCheck = Datalayer::getInterior();
+
+        foreach ($interior as $choice) {
+            if (!empty($interior) && !in_array($choice, $interiorCheck)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    static function validExterior($exterior): bool
+    {
+        $exteriorCheck = Datalayer::getInterior();
+
+        foreach ($exterior as $choice) {
+            if (!empty($choice) && !in_array($choice, $exteriorCheck)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     static function validWarranty($miles): bool

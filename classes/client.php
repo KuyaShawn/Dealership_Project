@@ -1,6 +1,6 @@
 <?php
 
-class Client
+class normalClient
 {
     private $_fName;
     private $_lName;
