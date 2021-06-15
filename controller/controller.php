@@ -150,8 +150,8 @@ class dealerController
             }
 
             //Get both interest and then send them to the view
-            $this->_f3->set('interior', dealerDataLayer::getInteriorAdditions());
-            $this->_f3->set('exterior', dealerDataLayer::getExteriorAdditions());
+            $this->_f3->set('interior', dealerDataLayer::getInterior());
+            $this->_f3->set('exterior', dealerDataLayer::getExterior());
 
             //Store the user input in the hive (Part of making the code sticky)
             $this->_f3->set('userInterior', $userInterior);
