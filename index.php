@@ -29,6 +29,11 @@ $f3->route('GET|POST /services', function(){
     $GLOBALS['controller']->services();
 });
 
+// Service page
+$f3->route('GET|POST /warrantyClients', function(){
+    $GLOBALS['controller']->warrantyClients();
+});
+
 // Summary page
 $f3->route('GET /summary', function(){
     $GLOBALS['controller']->summary();

@@ -124,6 +124,13 @@ class dealerController
 
     }
 
+    public function warrantyClients()
+    {
+        //Display the home page
+        $view = new Template();
+        echo $view->render('views/warrantyClients.html');
+    }
+
     public function summary()
     {
         //Display the home page
