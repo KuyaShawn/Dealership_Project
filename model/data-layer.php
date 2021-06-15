@@ -33,12 +33,13 @@ class DataLayer
 
     static function getInterior(): array
     {
-        return array("Vacuum", "Air Freshener", "Seat Restoration", "Cabin Filter", "Hatchback", "Pickup", "Van", "Minivan", "Wagon");
+        return array("Vacuum", "Air Freshener", "Seat Restoration", "Cabin Filter Change");
     }
 
     static function getExterior(): array
     {
-        return array("SUV", "Sedan", "Coupe", "Convertible", "Hatchback", "Pickup", "Van", "Minivan", "Wagon");
+        return array("Buff", "Wash", "Tire Shine", "Convertible", "Under Carriage Clean",
+            "Engine Bay Clean", "Clay Bar");
     }
 
 }
