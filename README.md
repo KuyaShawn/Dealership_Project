@@ -1,5 +1,5 @@
 # Dealership
-This website was made for our customers who wants to wants to buy a new or used car and to get their car serviced at our in-house mechanic shop that will perform fixes and detailing work for customers with warranty. In the service area, the customer will be able to insert their personal information and car info for us to book them an appointment for servicing their car & if their car has fifty thousand miles or less, they apply for warranty services. once that information gets filled we check our data bases invoices to get that customer a day/week as to when we can book them.
+This website as a virtual showroom made for our customers who want to buy a new or used car. It is also for those who want to get their car serviced at our in-house mechanic shop that will perform fixes and detailing work for customers with warranty. In the service area, the customer will be able to insert their personal information and car info for us to book them an appointment for servicing their car & if their car has fifty thousand miles or less, they apply for warranty services. After the information gets filled we check our data bases invoices to get that customer a day/week as to when we can book them.
 # Authors
 * Eashune Abenojar - Co-Founder/Developer
 * David Pavlenko - Co-Founder/Developer
