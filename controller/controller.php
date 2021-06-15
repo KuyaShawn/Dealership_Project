@@ -128,9 +128,46 @@ class dealerController
 
     public function warrantyClients()
     {
-        //Display the home page
-        $view = new Template();
-        echo $view->render('views/warrantyClients.html');
+        if ($_SESSION['user'] instanceof WarrantyClient) {
+            //Initialize variables to store user input as an array
+            $userInterior = array();
+            $userExterior = array();
+
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $userInterior = $_POST['indoorInterests'] == null ? array() : $_POST['indoorInterests'];
+                $userExterior = $_POST['outdoorInterests'] == null ? array() : $_POST['outdoorInterests'];
+
+                if (Validation::validIndoor($userInterior)) {
+                    $_SESSION['user']->setInDoorInterests($userInterior);
+                } else {
+                    $this->_f3->set('errors["indoor"]', "Please enter a valid interest");
+                }
+
+                if (Validation::validOutdoor($userExterior)) {
+                    $_SESSION['user']->setOutDoorInterests($userExterior);
+                } else {
+                    $this->_f3->set('errors["outdoor"]', "Please enter a valid interest");
+                }
+                if (empty($this->_f3->get('errors'))) {
+                    header('location: summary');
+                }
+            }
+
+            //Get both interest and then send them to the view
+            $this->_f3->set('indoor', DataLayer::getIndoors());
+            $this->_f3->set('outdoor', DataLayer::getOutdoors());
+
+            //Store the user input in the hive (Part of making the code sticky)
+            $this->_f3->set('userInterior', $userInterior);
+            $this->_f3->set('userExterior', $userExterior);
+
+            // Display the warranty page
+            $view = new Template();
+            echo $view->render('views/warrantyClients.html');
+        } else {
+            header('location: summary');
+        }
+
     }
 
     public function summary()
