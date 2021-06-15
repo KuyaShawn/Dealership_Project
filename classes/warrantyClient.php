@@ -1,6 +1,6 @@
 <?php
 
-class WarrantyClient extends Client
+class WarrantyClient extends normalClient
 {
     private $_interiorAdditions;
     private $_exteriorAdditions;
