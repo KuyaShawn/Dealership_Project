@@ -91,9 +91,26 @@ class dealerController
                 $this->_f3->set('errors[miles]', 'Please enter valid miles');
             }
 
-            $client->setMake($make);
-            $client->setCategory($category);
-            $client->setYear($year);
+            if (dealerValidation::validMake($make)){
+                $client->setMake($make);
+            }
+            else {
+                $this->_f3->set('errors[miles]', 'Please enter valid miles');
+            }
+
+            if (dealerValidation::validCategory($category)){
+                $client->setCategory($category);
+            }
+            else {
+                $this->_f3->set('errors[miles]', 'Please enter valid miles');
+            }
+
+            if (dealerValidation::validYear($year)){
+                $client->setYear($year);
+            }
+            else {
+                $this->_f3->set('errors[miles]', 'Please enter valid miles');
+            }
 
 
             if (empty($this->_f3->get('errors'))) {
