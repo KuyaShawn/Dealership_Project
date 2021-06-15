@@ -25,6 +25,7 @@ class dealerController
 
     public function services()
     {
+
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $fName = $_POST['fName'];
             $lName = $_POST['lName'];
@@ -94,11 +95,16 @@ class dealerController
             $client->setCategory($category);
             $client->setYear($year);
 
-        }
 
+            if (empty($this->_f3->get('errors'))) {
+                $_SESSION['client'] = $client;
+            }
+
+        }
         //Display the home page
         $view = new Template();
         echo $view->render('views/services.html');
+
     }
 
     public function summary()
@@ -125,14 +131,14 @@ class dealerController
             $username = $_POST['userName'];
             $userpass = $_POST['userPass'];
 
-            if(Validation::loginUser($username)){
+            if(dealerValidation::loginUser($username)){
                 $validLogin = true;
             }else{
                 $validLogin = false;
                 $this->_f3->set('errors["userName"]', "Please input a valid first name");
             }
 
-            if(Validation::loginPass($userpass)){
+            if(dealerValidation::loginPass($userpass)){
                 $validLogin = true;
             }else{
                 $validLogin = false;
