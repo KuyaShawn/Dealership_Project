@@ -25,7 +25,7 @@
         <thead>
         <tr>
             <td>Invoice ID</td><td>First Name</td><td>Last Name</td><td>Phone #</td><td>Email</td><td>Make</td>
-            <td>Model</td><td>Category</td><td>Year</td><td>Miles</td><td>Warranty</td>
+            <td>Model</td><td>Category</td><td>Year</td><td>Miles</td><td>Interior Service</td><td>Exterior Service</td>
         </tr>
         </thead>
         <tbody>
@@ -36,6 +36,7 @@
                 <td>{{ @order['meal_name'] }}</td>
                 <td>{{ @order['condiments'] }}</td>
                 <td>{{ @order['order_date'] }}</td>
+                <td>{{ @INSERTHERE['INSERTHERE'] }}</td>
                 <td>{{ @INSERTHERE['INSERTHERE'] }}</td>
                 <td>{{ @INSERTHERE['INSERTHERE'] }}</td>
                 <td>{{ @INSERTHERE['INSERTHERE'] }}</td>
@@ -69,6 +70,7 @@ CREATE TABLE dealerInvoice (
     Category VARCHAR(50),
     Years VARCHAR(50),
     Miles VARCHAR(50),
-    Warranty VARCHAR(50)
+    InteriorOptions VARCHAR(50),
+    ExteriorOptions VARCHAR(50)
 )
 -->

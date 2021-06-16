@@ -5,7 +5,7 @@
  */
 
 //Require the config file
-require_once($_SERVER['DOCUMENT_ROOT'].'/../config.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/../config.php');
 
 class dealerDataLayer
 {
@@ -25,11 +25,73 @@ class dealerDataLayer
             //Instantiate a PDO database object
             $this->_dbh = new PDO(DB_DSN, DB_USERNAME, DB_PASSWORD);
             //echo "Connected to database!";
-        }
-        catch(PDOException $e) {
+        } catch (PDOException $e) {
             //echo $e->getMessage();  //for debugging only
             die ("We are having Technical difficulties.");
         }
+    }
+
+    /**
+     * saveInvoice accepts an Order object and inserts it into the database
+     * @param $client
+     * @return string
+     */
+    function saveInvoice($client)
+    {
+        //1. Define the query
+        $sql = "INSERT INTO orders (invoice_id, fName, lName, pNum, email,
+                    Make, Model, Category, Years, Miles, InteriorOptions, ExteriorOptions) 
+                VALUES (:invoice_id, :fName, :lName, :pNum, :email,
+                        :Make, :Model, :Category, :Years, :Miles, :InteriorOptions, :ExteriorOptions)";
+
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //3. Bind the parameters
+        $statement->bindParam(':invoice_id', $client->getFName(), PDO::PARAM_STR);
+        $statement->bindParam(':fName', $client->getFName(), PDO::PARAM_STR);
+        $statement->bindParam(':lName', $client->getLName(), PDO::PARAM_STR);
+        $statement->bindParam(':pNum', $client->getPNum(), PDO::PARAM_STR);
+        $statement->bindParam(':email', $client->getEmail(), PDO::PARAM_STR);
+        $statement->bindParam(':Make', $client->getMake(), PDO::PARAM_STR);
+        $statement->bindParam(':Model', $client->getModel(), PDO::PARAM_STR);
+        $statement->bindParam(':Category', $client->getCategory(), PDO::PARAM_STR);
+        $statement->bindParam(':Years', $client->getYear(), PDO::PARAM_STR);
+        $statement->bindParam(':Miles', $client->getMiles(), PDO::PARAM_STR);
+        $statement->bindParam(':InteriorOptions', $client->getInteriorAdditions(), PDO::PARAM_STR);
+        $statement->bindParam(':ExteriorOptions', $client->getExteriorAdditions(), PDO::PARAM_STR);
+
+        //4. Execute the query
+        $statement->execute();
+
+        //5. Process the results (get OrderID)
+        $id = $this->_dbh->lastInsertId();
+        return $id;
+    }
+
+    /**
+     * getOrders returns all orders from the database
+     * @return array An array of data rows
+     */
+    function getInvoice()
+    {
+        //1. Define the query
+        $sql = "SELECT 	invoice_id, fName, lName, pNum, email,
+                Make, Model, Category, Years, Miles, InteriorOptions, ExteriorOptions  
+                FROM dealerInvoice,
+                WHERE orders.meal_id = meal.meal_id";
+
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //3. Bind the parameters
+
+        //4. Execute the query
+        $statement->execute();
+
+        //5. Process the results
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
     }
 
     static function getMake()
