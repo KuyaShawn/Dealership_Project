@@ -49,5 +49,5 @@ BONUS: Incorporates Ajax that access data from a JSON file, PHP script, or API.
 ![ER Diagram](https://eabenojar.greenriverdev.com/328/dealership_project/diagram_img/ER.jpg)
 
 # Admin Page
-user: dealerAdmin
-pass: dealer@dmin
+* user: dealerAdmin
+* pass: dealer@dmin
