@@ -18,7 +18,7 @@ This website serves as a virtual showroom made for our customers who want to buy
 ✔️ 3. Has a clearly defined database layer using PDO and prepared statements. You should have at least two related tables.
 * All database layer is under model in data-layer.php. kidUser and creations are the related table (one to many relationship).
 
-❌ 4. Data can be viewed and added.
+✔️ 4. Data can be viewed and added.
 * Database layer uses PDO and prepared statements to add, retrieve, and delete from the database.
 
 ✔️ 5. Has a history of commits from both team members to a Git repository. Commits are clearly commented.
