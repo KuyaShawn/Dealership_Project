@@ -72,42 +72,36 @@ class dealerController
                 $this->_f3->set('errors[email]', 'Please enter a valid email');
             }
 
-            //validate the model
             if (dealerValidation::validModel($model)) {
                 $client->setModel($model);
             } else {
                 $this->_f3->set('errors[model]', 'Please enter a valid model');
             }
 
-            //validate the miles
             if (dealerValidation::validMiles($miles)) {
                 $client->setMiles($miles);
             } else {
                 $this->_f3->set('errors[miles]', 'Please enter valid miles');
             }
 
-            //validate the make
             if (dealerValidation::validMake($make)) {
                 $client->setMake($make);
             } else {
                 $this->_f3->set('errors[make]', 'Please enter valid make');
             }
 
-            //validate the category
             if (dealerValidation::validCategory($category)) {
                 $client->setCategory($category);
             } else {
                 $this->_f3->set('errors[category]', 'Please enter valid category');
             }
 
-            //validate the year
             if (dealerValidation::validYear($year)) {
                 $client->setYear($year);
             } else {
                 $this->_f3->set('errors[year]', 'Please enter valid year');
             }
 
-            //if there are no errors redirect to either warranty page or sumary
             if (empty($this->_f3->get('errors'))) {
                 if ($client instanceof WarrantyClient){
                     header('location: warrantyClients');
@@ -139,7 +133,6 @@ class dealerController
                 $userInterior = $_POST['interiorOption'];
                 $userExterior = $_POST['exteriorOption'];
 
-                //validate that the form is not being spoofed
                 if (dealerValidation::validInterior($userInterior)) {
                     $client->setInteriorAdditions($userInterior);
                 } else {
@@ -172,8 +165,10 @@ class dealerController
 
     public function summary()
     {
-
         $client =  $_SESSION['client'];
+        global $dataLayer;
+        $dataLayer->saveInvoice($client);
+
         //Display the home page
         $view = new Template();
         echo $view->render('views/sumary.html');
@@ -182,6 +177,10 @@ class dealerController
     // Admin Page - START
     public function admin()
     {
+        //Get the data from the model
+        $invoices = $GLOBALS['dataLayer']->getInvoice();
+        $this->_f3->set('invoices', $invoices);
+
         //Display the home page
         $view = new Template();
         echo $view->render('views/admin.html');

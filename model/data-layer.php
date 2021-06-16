@@ -39,16 +39,16 @@ class dealerDataLayer
     function saveInvoice($client)
     {
         //1. Define the query
-        $sql = "INSERT INTO orders (invoice_id, fName, lName, pNum, email,
-                    Make, Model, Category, Years, Miles, InteriorOptions, ExteriorOptions) 
-                VALUES (:invoice_id, :fName, :lName, :pNum, :email,
-                        :Make, :Model, :Category, :Years, :Miles, :InteriorOptions, :ExteriorOptions)";
+        $sql = "INSERT INTO dealerInvoice (fName, lName, pNum, email,
+                    Make, Model, Category, Years, Miles) 
+                VALUES (:fName, :lName, :pNum, :email,
+                        :Make, :Model, :Category, :Years, :Miles)";
 
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);
 
         //3. Bind the parameters
-        $statement->bindParam(':invoice_id', $client->getFName(), PDO::PARAM_STR);
+
         $statement->bindParam(':fName', $client->getFName(), PDO::PARAM_STR);
         $statement->bindParam(':lName', $client->getLName(), PDO::PARAM_STR);
         $statement->bindParam(':pNum', $client->getPNum(), PDO::PARAM_STR);
@@ -58,15 +58,10 @@ class dealerDataLayer
         $statement->bindParam(':Category', $client->getCategory(), PDO::PARAM_STR);
         $statement->bindParam(':Years', $client->getYear(), PDO::PARAM_STR);
         $statement->bindParam(':Miles', $client->getMiles(), PDO::PARAM_STR);
-        $statement->bindParam(':InteriorOptions', $client->getInteriorAdditions(), PDO::PARAM_STR);
-        $statement->bindParam(':ExteriorOptions', $client->getExteriorAdditions(), PDO::PARAM_STR);
 
         //4. Execute the query
         $statement->execute();
 
-        //5. Process the results (get OrderID)
-        $id = $this->_dbh->lastInsertId();
-        return $id;
     }
 
     /**
@@ -77,9 +72,8 @@ class dealerDataLayer
     {
         //1. Define the query
         $sql = "SELECT 	invoice_id, fName, lName, pNum, email,
-                Make, Model, Category, Years, Miles, InteriorOptions, ExteriorOptions  
-                FROM dealerInvoice,
-                WHERE orders.meal_id = meal.meal_id";
+                Make, Model, Category, Years, Miles
+                FROM dealerInvoice";
 
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);

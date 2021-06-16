@@ -13,6 +13,7 @@ session_start();
 //Instantiate Fat-Free
 $f3 = Base::instance();
 $controller = new dealerController($f3);
+$dataLayer = new dealerDataLayer();
 
 //Home page
 $f3->route('GET /', function(){
