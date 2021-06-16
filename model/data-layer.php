@@ -3,11 +3,35 @@
 /**
  * Class DataLayer
  */
+
+//Require the config file
+require_once($_SERVER['DOCUMENT_ROOT'].'/../config.php');
+
 class dealerDataLayer
 {
+    // Add a field for the database object
     /**
-     * @return string[]
+     * @var PDO The database connection object
      */
+    private $_dbh;
+
+    /**
+     * DataLayer constructor.
+     */
+    function __construct()
+    {
+        //Connect to the database
+        try {
+            //Instantiate a PDO database object
+            $this->_dbh = new PDO(DB_DSN, DB_USERNAME, DB_PASSWORD);
+            //echo "Connected to database!";
+        }
+        catch(PDOException $e) {
+            //echo $e->getMessage();  //for debugging only
+            die ("We are having Technical difficulties.");
+        }
+    }
+
     static function getMake()
     {
         return array("Acura", "Alfa Romeo", "Aston Martin", "Audi", "BMW", "Bentley", "Buick", "Cadilac", "Chevrolet", "Chrysler",
@@ -19,17 +43,11 @@ class dealerDataLayer
             "Toyota", "Volkswagen", "Volvo");
     }
 
-    /**
-     * @return string[]
-     */
     static function getCategory()
     {
         return array("SUV", "Sedan", "Coupe", "Convertible", "Hatchback", "Pickup", "Van", "Minivan", "Wagon");
     }
 
-    /**
-     * @return string[]
-     */
     static function getYear()
     {
         return array("1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979",
@@ -40,17 +58,11 @@ class dealerDataLayer
             "2021", "2022", "2023");
     }
 
-    /**
-     * @return string[]
-     */
     static function getInterior()
     {
         return array("Vacuum", "Air Freshener", "Seat Restoration", "Cabin Filter Change");
     }
 
-    /**
-     * @return string[]
-     */
     static function getExterior()
     {
         return array("Buff", "Wash", "Tire Shine", "Convertible", "Under Carriage Clean",

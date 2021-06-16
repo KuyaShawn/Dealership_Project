@@ -24,7 +24,8 @@
     <table id="tblOrders">
         <thead>
         <tr>
-            <td>Invoice ID</td><td>First Name</td><td>Last Name</td><td>Make</td><td>Model</td><td>Miles</td><td>Warranty</td><td>Premium</td>
+            <td>Invoice ID</td><td>First Name</td><td>Last Name</td><td>Phone #</td><td>Email</td><td>Make</td>
+            <td>Model</td><td>Category</td><td>Year</td><td>Miles</td><td>Warranty</td>
         </tr>
         </thead>
         <tbody>
@@ -38,6 +39,9 @@
                 <td>{{ @INSERTHERE['INSERTHERE'] }}</td>
                 <td>{{ @INSERTHERE['INSERTHERE'] }}</td>
                 <td>{{ @INSERTHERE['INSERTHERE'] }}</td>
+                <td>{{ @INSERTHERE['INSERTHERE'] }}</td>
+                <td>{{ @INSERTHERE['INSERTHERE'] }}</td>
+                <td>{{ @INSERTHERE['INSERTHERE'] }}</td>
             </tr>
         </repeat>
         </tbody>
@@ -48,7 +52,23 @@
 <script src="//code.jquery.com/jquery-3.5.1.js"></script>
 <script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 <script>
-    //$('#tblOrders').DataTable();
+    $('#tblOrders').DataTable();
 </script>
 </body>
 </html>
+
+<!--
+CREATE TABLE dealerInvoice (
+	invoice_id int (4) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    fName VARCHAR(50),
+    lName VARCHAR(50),
+    pNum VARCHAR(50),
+    email VARCHAR(50),
+    Make VARCHAR(50),
+    Model VARCHAR(50),
+    Category VARCHAR(50),
+    Years VARCHAR(50),
+    Miles VARCHAR(50),
+    Warranty VARCHAR(50)
+)
+-->
